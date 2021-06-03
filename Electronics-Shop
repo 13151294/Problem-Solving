@@ -1,0 +1,13 @@
+def mostExpensive(budget, keyboardCount, driveCount, keyboards, drives):
+    inBudget = []
+    for i in range(keyboardCount):
+        for j in range(driveCount):
+            if keyboards[i] + drives[j] > budget:
+                break
+            if keyboards[i] + drives[j] <= budget:
+                inBudget.append(keyboards[i] + drives[j])
+    return(max(inBudget) if len(inBudget) > 0 else -1)
+budget, keyboardCount, driveCount = map(int, input().split())
+keyboards = sorted(list(map(int, input().split())), reverse=True)
+drives = sorted(list(map(int, input().split())))
+print(mostExpensive(budget, keyboardCount, driveCount, keyboards, drives))
