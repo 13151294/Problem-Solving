@@ -1,0 +1,10 @@
+def Cat_n_Mouse(CatA, CatB, MouseC):
+    CatA_Distance = abs(CatA - MouseC)
+    CatB_Distance = abs(CatB - MouseC)
+    if CatA_Distance == CatB_Distance:
+        return "Mouse C"
+    else:
+        return ("Cat B" if CatA_Distance > CatB_Distance else "Cat A" )
+for i in range(int(input())):
+    a, b, c = map(int, input().split())
+    print(Cat_n_Mouse(a,b,c))
