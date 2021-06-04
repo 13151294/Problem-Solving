@@ -1,0 +1,4 @@
+from collections import Counter
+input()
+a = Counter(map(int,input().split()))
+print(max([a[i]+a.get(i+1,0) for i in sorted(a)]))
